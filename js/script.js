@@ -1,6 +1,3 @@
-
-
-
 // Filter using JavaScript (No change)
 $(document).ready(function () {
     $(".filter-item").click(function () {
@@ -17,14 +14,13 @@ $(document).ready(function () {
 // JavaScript for sticky navbar (fixed position on scroll)
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function () {
+        const navbar = document.getElementById('navbar-top');
         if (window.scrollY > 50) {
-            document.getElementById('navbar-top').classList.add('fixed-top');
-            // Add padding top to show content behind navbar
-            let navbarHeight = document.querySelector('.navbar').offsetHeight;
+            navbar.classList.add('fixed-top');
+            const navbarHeight = navbar.offsetHeight;
             document.body.style.paddingTop = navbarHeight + 'px';
         } else {
-            document.getElementById('navbar-top').classList.remove('fixed-top');
-            // Remove padding top from body
+            navbar.classList.remove('fixed-top');
             document.body.style.paddingTop = '0';
         }
     });
