@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-README
-=======
+
 # 💼 Personal Portfolio - Jeevan Shrestha
 
 This is my personal portfolio website built using **HTML**, **CSS**, and **Bootstrap 5**. It showcases my experience, skills, and selected projects. The design is fully responsive and includes smooth animations powered by the **AOS (Animate On Scroll)** library.
