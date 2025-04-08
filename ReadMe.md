@@ -47,4 +47,4 @@ This is my personal portfolio website built using **HTML**, **CSS**, and **Boots
 
 ---
 
->>>>>>> 22dcd1e (updated cv and some paths)
+
