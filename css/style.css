@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Applying Google font */
 body {
     font-family: 'Josefin Sans', sans-serif;
@@ -185,3 +186,222 @@ footer .link-group a:hover {
         overflow-x: hidden;
     }
 }
+=======
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Applying Google font */
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+}
+
+/* Navbar Styling */
+.navbar-nav a {
+    color: black;
+    position: relative;
+}
+.navbar-nav a:hover {
+    color: #fca61f;
+}
+.navbar-nav a:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: #fca61f;
+    transition: width 0.3s, left 0.3s;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+.navbar-nav a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+/* Button styling */
+.c-btn {
+    border: none;
+    background: #fca61f;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Home Section Styling */
+.home {
+    background: linear-gradient(33deg, rgba(242,242,255,1) 0%, rgba(235,249,255,1) 100%);
+    padding: 30px 0;
+    text-align: center;
+    overflow: hidden;
+}
+.home h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.c-orange {
+    color: #6f34fe;
+    font-weight: 700;
+    font-size: 4rem;
+}
+.home p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.h-btn:hover {
+    background: #6f34fe;
+    color: #fff;
+    transform: translateY(-20px);
+    transition-duration: 1s;
+}
+
+/* Image animation */
+.home img {
+    animation: floatimg 4s ease-in-out infinite;
+    max-width: 100%;
+}
+@keyframes floatimg {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-24px);
+    }
+}
+
+/* Expertise Section */
+.heading small {
+    color: #6f34fe;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.heading h3 {
+    margin-top: 0.5rem;
+    color: #3f396d;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.expertise h4 {
+    color: #3f396d;
+    font-weight: 700;
+}
+.expertise a:hover {
+    color: #6f34fe;
+}
+
+/* Portfolio Section */
+#myBtnContainer button {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+#myBtnContainer button:hover {
+    color: #fca61f;
+}
+
+/* Portfolio Cards */
+.portfolio-body .card {
+    max-width: 100%;
+    margin: 0 auto;
+}
+.portfolio-body .card img {
+    max-width: 100%;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #f3f3f3;
+    overflow: hidden;
+}
+.contact-form .form-control:focus {
+    box-shadow: none;
+    border: 1px solid #fca61f;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #211e39;
+    color: #fff;
+    padding: 20px 0;
+    overflow: hidden;
+}
+footer .link-group a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+footer .link-group a:hover {
+    color: #fca61f;
+}
+
+/* Back to Top Button */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    font-size: 1.4rem;
+    background-color: #fca61f;
+    color: #fff;
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .home h2 {
+        font-size: 2rem;
+    }
+    .c-orange {
+        font-size: 2.5rem;
+    }
+    .home p {
+        font-size: 1rem;
+    }
+    .h-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    #myBtnContainer button {
+        font-size: 16px;
+    }
+    #btn-back-to-top {
+        font-size: 1.2rem;
+    }
+
+    .home,
+    .expertise,
+    .portfolio,
+    .contact,
+    footer {
+        overflow-x: hidden;
+    }
+
+    .container,
+    .container-fluid,
+    .row {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+>>>>>>> 22dcd1e (updated cv and some paths)
