@@ -1,58 +1,16 @@
-// Three.js Background
+// Remove Three.js initialization
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById('canvas-container').appendChild(renderer.domElement);
 
-// Create floating particles
-const particles = [];
-const particleCount = 100;
-
-for (let i = 0; i < particleCount; i++) {
-    const geometry = new THREE.SphereGeometry(0.1, 8, 8);
-    const material = new THREE.MeshBasicMaterial({ 
-        color: 0x7c3aed,
-        transparent: true,
-        opacity: 0.6
-    });
-    const particle = new THREE.Mesh(geometry, material);
-    
-    particle.position.x = Math.random() * 20 - 10;
-    particle.position.y = Math.random() * 20 - 10;
-    particle.position.z = Math.random() * 20 - 10;
-    
-    particle.velocity = new THREE.Vector3(
-        (Math.random() - 0.5) * 0.02,
-        (Math.random() - 0.5) * 0.02,
-        (Math.random() - 0.5) * 0.02
-    );
-    
-    particles.push(particle);
-    scene.add(particle);
-}
-
 camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame(animate);
-    
-    particles.forEach(particle => {
-        particle.position.add(particle.velocity);
-        
-        // Bounce off walls
-        if (Math.abs(particle.position.x) > 10) particle.velocity.x *= -1;
-        if (Math.abs(particle.position.y) > 10) particle.velocity.y *= -1;
-        if (Math.abs(particle.position.z) > 10) particle.velocity.z *= -1;
-        
-        particle.rotation.x += 0.01;
-        particle.rotation.y += 0.01;
-    });
-    
     renderer.render(scene, camera);
 }
-
-animate();
 
 // Handle window resize
 window.addEventListener('resize', () => {
@@ -120,7 +78,7 @@ darkModeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', theme);
 });
 
-// Experience Section - No Animation for better loading
+// Experience Section
 document.addEventListener('DOMContentLoaded', function() {
     console.log("DOM Content Loaded");
     
@@ -150,9 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalContent');
     const closeModal = document.querySelector('.close-modal');
-
-    console.log("Read more buttons:", readMoreButtons.length);
-    console.log("Modal exists:", !!experienceModal);
 
     if (readMoreButtons.length && experienceModal && modalTitle && modalContent && closeModal) {
         const experienceDetails = {
@@ -229,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         readMoreButtons.forEach(button => {
             button.addEventListener('click', () => {
-                console.log("Read more button clicked");
                 const details = button.getAttribute('data-details');
                 if (experienceDetails[details]) {
                     modalTitle.textContent = experienceDetails[details].title;
@@ -251,7 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         closeModal.addEventListener('click', () => {
-            console.log("Close modal clicked");
             const modalBox = experienceModal.querySelector('.bg-white, .dark\\:bg-dark');
             if (modalBox) {
                 modalBox.classList.remove('scale-100', 'opacity-100');
@@ -277,80 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// GSAP Animations
-// Hero section
-gsap.from('.hero-content', {
-    opacity: 0,
-    y: 100,
-    duration: 1,
-    ease: 'power4.out'
-});
-
-// About section - remove animations and make elements visible immediately
-document.addEventListener('DOMContentLoaded', function() {
-    // Make About section cards immediately visible
-    const aboutCards = document.querySelectorAll('#about .glass-card');
-    aboutCards.forEach(card => {
-        card.style.opacity = '1';
-        card.style.transform = 'none';
-        card.style.transition = 'none';
-    });
-});
-
-// Skills section badges - removed animation, only make visible immediately
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM loaded, initializing skills");
-    
-    // Get all skill badges
-    const skillBadges = document.querySelectorAll('.skill-badge');
-    console.log("Found skill badges:", skillBadges.length);
-    
-    // Make all badges visible immediately
-    skillBadges.forEach(badge => {
-        badge.style.opacity = '1';
-        badge.style.transform = 'none';
-        badge.style.transition = 'none';
-    });
-});
-
-// Projects section
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Initializing projects section");
-    
-    const projectCards = document.querySelectorAll('#projects .project-card');
-    console.log("Found project cards:", projectCards.length);
-    
-    // Make all project cards visible immediately
-    projectCards.forEach(card => {
-        card.style.opacity = '1';
-        card.style.transform = 'none';
-    });
-});
-
-// Simple animation for projects
-gsap.from('#projects .project-card', {
-    scrollTrigger: {
-        trigger: '#projects',
-        start: 'top center'
-    },
-    opacity: 0.8,
-    y: 20,
-    duration: 0.5,
-    stagger: 0.2,
-    ease: 'power1.out'
-});
-
-// Contact form
-gsap.from('#contact form', {
-    scrollTrigger: {
-        trigger: '#contact',
-        start: 'top center'
-    },
-    opacity: 0,
-    y: 50,
-    duration: 0.8
-});
-
 // Active nav link on scroll
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -374,21 +253,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-// Floating card animation
-const floatingCard = document.querySelector('.perspective-1000');
-
-if (floatingCard) {
-    window.addEventListener('mousemove', (e) => {
-        const { clientX, clientY } = e;
-        const { innerWidth, innerHeight } = window;
-        
-        const x = (clientX / innerWidth - 0.5) * 20;
-        const y = (clientY / innerHeight - 0.5) * 20;
-        
-        floatingCard.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
-    });
-}
 
 // Form submission
 const contactForm = document.querySelector('form');
@@ -416,26 +280,4 @@ contactForm.addEventListener('submit', (e) => {
     setTimeout(() => {
         successMessage.remove();
     }, 3000);
-});
-
-// Main initialization
-document.addEventListener('DOMContentLoaded', function() {
-    console.log("Main DOM Content Loaded");
-    
-    // Debug log for all sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        console.log(`Found section: ${section.id}`);
-    });
-    
-    // Check for project cards directly
-    const projectCards = document.querySelectorAll('.project-card');
-    console.log(`Found ${projectCards.length} project cards total`);
-    
-    // Force display all project cards
-    projectCards.forEach(card => {
-        card.style.display = 'block';
-        card.style.opacity = '1';
-        card.style.visibility = 'visible';
-    });
 }); 

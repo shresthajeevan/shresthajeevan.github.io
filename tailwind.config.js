@@ -1,34 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./*.{html,js}"],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1',
-        secondary: '#8b5cf6',
-        accent: '#f0f1ff',
-        dark: '#1f2937',
-        light: '#f8f9fa',
+        primary: '#7c3aed',
+        secondary: '#4f46e5',
+        dark: '#1a1a1a',
+        light: '#ffffff',
+        success: '#10b981',
+        error: '#ef4444',
+        warning: '#f59e0b',
+        info: '#3b82f6'
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Fira Code', 'monospace']
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
-      animation: {
-        'float': 'float 15s infinite ease-in-out',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-          '25%': { transform: 'translate(50px, 50px) rotate(90deg)' },
-          '50%': { transform: 'translate(0, 100px) rotate(180deg)' },
-          '75%': { transform: 'translate(-50px, 50px) rotate(270deg)' },
-        },
-      },
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      }
     },
   },
   plugins: [],
