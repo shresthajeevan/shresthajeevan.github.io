@@ -12,7 +12,6 @@ Welcome to my portfolio website repository! This site showcases my skills, proje
 - **HTML5** - Semantic structure
 - **CSS3/TailwindCSS** - Styling and responsive design
 - **JavaScript** - Interactive elements and animations
-- **Three.js** - 3D background effects
 - **GSAP** - Advanced animations and scroll triggers
 - **FontAwesome** - Icons
 
@@ -23,7 +22,6 @@ Welcome to my portfolio website repository! This site showcases my skills, proje
 - **Animated UI**: Subtle animations using GSAP and custom effects
 - **Interactive Elements**: Smooth scrolling, modal popups, and hover effects
 - **Project Showcase**: Featured projects with links to GitHub repositories
-- **3D Background Effects**: Enhanced visual appeal with Three.js elements
 - **Downloadable Resume**: Option to download my full resume
 
 ## 📋 Pages/Sections
@@ -67,7 +65,7 @@ Feel free to reach out to me:
 
 - **Email**: shresthajeevan889@gmail.com
 - **Phone**: +1 (206) 291-0589
-- **Location**: Cape Girardeau, MO
+- **Location**: San Francisco, CA
 
 ## 🔗 Links
 
@@ -76,4 +74,4 @@ Feel free to reach out to me:
 - **LinkedIn**: [linkedin.com/in/jeevan-shrestha](https://www.linkedin.com/in/jeevan-shrestha/)
 
 
-© 2024 Jeevan Shrestha. All rights reserved. 
+© 2025 Jeevan Shrestha. All rights reserved. 
