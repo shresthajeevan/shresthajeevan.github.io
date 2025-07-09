@@ -65,7 +65,6 @@ Feel free to reach out to me:
 
 - **Email**: shresthajeevan262@gmail.com
 - **Phone**: +1 (206) 206-3587
-- **Location**: Seattle, WA
 
 ## 🔗 Links
 
